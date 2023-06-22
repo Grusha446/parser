@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Access Logs</title>
+</head>
+<body>
+	<h1>Access Logs:</h1>
+
+	<form action="{{ url_for('get_logs') }}" method="GET">
+		<label for="ip">IP address:</label>
+		<input type="text" name="ip" id="ip">
+
+		<label for="start_date">Start date:</label>
+		<input type="date" name="start_date" id="start_date">
+
+		<label for="end_date">End date:</label>
+		<input type="date" name="end_date" id="end_date">
+
+		<button type="submit">Filter</button>
+	</form>
+
+	<table>
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>IP Address</th>
+				<th>Date</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for log in logs %}
+			<tr>
+				<td>{{ log.id }}</td>
+				<td>{{ log.ip }}</td>
+				<td>{{ log.date }}</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</body>
+</html>

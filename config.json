@@ -1,0 +1,13 @@
+{
+    "database": {
+        "user": "root",
+        "password": "PA$$vv0RD",
+        "host": "127.0.0.1",
+        "port": "3306",
+        "name": "final"
+    },
+    "logs": {
+        "directory": "logs",
+        "file_mask": "*.log"
+      }
+}
