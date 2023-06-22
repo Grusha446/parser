@@ -13,8 +13,8 @@ def read_config(file_path):
 
         return log_path, log_file_mask
     except configparser.Error as e:
-        raise ConfigError(f"Error while reading configuration file: {e}")
+        raise ConfigError(f"Ошибка при чтении файла конфигурации: {e}")
     except KeyError as e:
-        raise ConfigError(f"Required parameter is missing: {e}")
+        raise ConfigError(f"Отсутствует обязательный параметр: {e}")
     except Exception as e:
-        raise ConfigError(f"Unknown error occurred in the application: {e}")
+        raise ConfigError(f"В приложении произошла неизвестная ошибка: {e}")
